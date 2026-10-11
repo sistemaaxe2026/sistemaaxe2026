@@ -1,9 +1,9 @@
 :root{--forest:#0e281e;--emerald:#1e6149;--gold:#c6a56b;--ink:#16251f;--muted:#6b7770;--bg:#f8f8f5;--line:#dce4dd;--white:#fff}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.68}a{color:inherit;text-decoration:none}
 .auth-layout{display:grid;grid-template-columns:minmax(420px,54%) minmax(430px,46%);min-height:100vh;background:var(--bg)}
-.auth-brand{min-height:100vh;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#1f5136 0%,#09190f 74%);display:flex;align-items:center;justify-content:center}
+.auth-brand{min-height:100vh;position:relative;overflow:hidden;background:#08170f;display:flex;align-items:center;justify-content:center}
 .auth-brand:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.06),transparent 50%,rgba(0,0,0,.12))}
-.brand-image{position:absolute;inset:0;display:block;height:100%;width:100%;max-width:none;object-fit:fill!important;object-position:center;z-index:1}
+.auth-brand:before{content:'';position:absolute;inset:-18px;background:url('/brand/logo-inzo-original.jpeg') center/cover no-repeat;filter:blur(18px) brightness(.42);transform:scale(1.04);z-index:0}.brand-image{position:relative;display:block;height:100vh;width:100%;max-width:100%;object-fit:contain!important;object-position:center;z-index:1}
 .brand-glow{position:absolute;inset:0;background:radial-gradient(circle,rgba(191,158,83,.13),transparent 65%)}
 .brand-bottom{position:absolute;z-index:3;bottom:30px;left:8%;right:8%;display:flex;align-items:center;gap:14px;color:#f2e7cc;font-size:11px;letter-spacing:.09em;text-transform:uppercase;justify-content:center;text-align:center;text-shadow:0 2px 5px #000}.brand-bottom p{margin:0;white-space:nowrap}.brand-line{height:1px;width:50px;background:linear-gradient(90deg,transparent,#c6a56b)}
 .auth-right{min-height:100vh;display:flex;flex-direction:column;padding:32px clamp(28px,5.2vw,90px) 23px;background:radial-gradient(ellipse at 85% 0%,#f2f2eb 0%,#fff 40%)}
