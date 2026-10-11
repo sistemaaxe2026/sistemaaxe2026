@@ -1,0 +1,10 @@
+-- EXECUÇÃO MANUAL E CONTROLADA, APENAS APÓS CONFIGURAÇÃO DO SUPABASE.
+-- Substitua o UUID pelo id real da conta de desenvolvedor criada no Auth.
+-- Nunca publique senha ou chaves service_role no projeto.
+-- Após executar, confirme que só existe uma conta developer.
+-- begin;
+-- update public.profiles
+-- set role = 'developer', status = 'ativo', approved_at=now(), updated_at=now()
+-- where id = 'INSIRA-UUID-VALIDO-AQUI'::uuid
+--   and house_id = '00000000-0000-4000-8000-000000000001';
+-- commit;
