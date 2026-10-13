@@ -51,7 +51,11 @@ export default function AuthScreen() {
         setMessage({type:'success',content:'Solicitação recebida, se o cadastro foi criado. O acesso permanecerá pendente até aprovação da administração.'});
       }
     } catch(error) {
-      setMessage({type:'error',content:error instanceof Error ? error.message : 'Não foi possível concluir a solicitação.'});
+      const detail = error instanceof Error ? error.message : '';
+      const friendly = /failed to fetch|fetch failed|networkerror|network request failed/i.test(detail)
+        ? 'Não foi possível conectar ao Supabase. Confira no Vercel se NEXT_PUBLIC_SUPABASE_URL contém o Project URL correto e se NEXT_PUBLIC_SUPABASE_ANON_KEY contém a chave pública (publishable/anon) deste mesmo projeto. Depois, publique novamente.'
+        : detail || 'Não foi possível concluir a solicitação. Tente novamente.';
+      setMessage({type:'error',content:friendly});
     } finally {setLoading(false)}
   };
   return <main className="auth-layout">
